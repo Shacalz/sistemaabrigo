@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../font/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans Semibold';
+    src: url('../font/OpenSans-Semibold.ttf');
+}
+
+/*....... Genericos .....*/
+
+.campo {
+    -fx-pref-height: 35px;
+    -fx-min-height: 35px;
+    -fx-max-height: 35px;
+    -fx-border-radius: 3px;
+    -fx-font-size: 13px;
+}
+
+/*......... Grupo de menus ..........*/
+
+.bt-left, .bt-center, .bt-right {
+    -fx-background-color: #7cce88;
+    -fx-border-color: #71c47d;
+    -fx-text-fill: #fff;
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-cursor: hand;
+    -fx-pref-height: 35px;
+}
+
+.bt-left {
+    -fx-border-radius: 4 0 0 4;
+}
+
+.bt-center {
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: #71c47d transparent;
+}
+
+.bt-right {
+    -fx-border-radius: 0 4 4 0;
+}
+
+.bt-left:hover, .bt-center:hover, .bt-right:hover {
+    -fx-background-color: #fff;
+    -fx-border-color: #68b374;
+    -fx-text-fill: #333;
+    -fx-background-insets: 0;
+}
+
+.bt-left:selected, .bt-center:selected, .bt-right:selected {
+    -fx-background-color: #fff;
+    -fx-border-color: #68b374;
+    -fx-text-fill: #333;
+    -fx-background-insets: 0;
+}
+
+/*....... Titulo e topo da tela  .....*/
+
+.box-topo {
+    -fx-min-height: 60px;
+    -fx-padding: 0 15 12 15;
+    -fx-alignment: bottom-left;
+    -fx-spacing: 8;
+}
+
+.titulo {
+    -fx-text-fill: #bed452;
+    -fx-font-size: 20px;
+    -fx-font-family: "Open Sans";
+    -fx-alignment: bottom-left;
+}
+
+/*....... Menu Pesquisar  .....*/
+
+.pesquisar {
+    -fx-max-width: 200px;
+    -fx-min-width: 200px;
+    -fx-max-height: 30px;
+    -fx-alignment: center-right;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right center;
+    -fx-padding: 0 30 0 5;
+    -fx-background-image: url("../view/imgs/pesquisa.png");
+    -fx-border-width: 0 0 1 0;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+.pesquisar:focused {
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+}
+
+/* ....... Menus  .....*/
+
+.menus-tela {
+    -fx-background-color: transparent;
+    -fx-border-color: #f7ae0a;
+    -fx-border-radius: 50;
+    -fx-border-width: 2;
+    -fx-background-radius: 60;
+    -fx-pref-height: 30px;
+    -fx-pref-width: 30px;
+    -fx-max-height: 30px;
+    -fx-max-width: 30px;
+    -fx-min-height: 30px;
+    -fx-min-width: 30px;
+    -fx-content-display: graphic-only;
+    -fx-cursor: hand;
+}
+
+.menu-add {
+    -fx-graphic: url("../view/imgs/add.png");
+}
+
+.menu-add:hover {
+    -fx-graphic: url("../view/imgs/add-h.png");
+}
+
+.menu-editar {
+    -fx-graphic: url("../view/imgs/editar.png");
+}
+
+.menu-editar:hover{
+    -fx-graphic: url("../view/imgs/editar-h.png");
+}
+
+.menu-excluir {
+    -fx-graphic: url("../view/imgs/deletar.png");
+}
+
+.menu-excluir:hover{
+    -fx-graphic: url("../view/imgs/deletar-h.png");
+}
+
+.menu-relatorio {
+    -fx-graphic: url("../view/imgs/relatorio-h.png");
+}
+
+.menu-relatorio:hover{
+    -fx-graphic: url("../view/imgs/relatorio.png");
+}
+
+.menu-infov {
+    -fx-graphic: url("../view/imgs/infov.png");
+}
+
+.menu-infov:hover{
+    -fx-graphic: url("../view/imgs/infov-h.png");
+}
+
+/* ....... Menus ações  .....*/
+
+.menus-acoes {
+    -fx-min-height: 35px;
+    -fx-pref-height: 35px;
+    -fx-max-height: 35px;
+/*     -fx-min-width: 200px;
+    -fx-pref-width: 200px;
+*/
+    -fx-max-width: 200px;
+    -fx-font-size: 13px;
+    -fx-font-family: "Open Sans";
+    -fx-content-display: left;
+    -fx-graphic-text-gap: 8;
+    -fx-border-insets: 0;
+    -fx-background-insets: 0;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+}
+
+.menus-acoes:hover {
+    -fx-effect: innershadow(two-pass-box, rgba(0, 0, 0, 0.2), 6, 0.1, 0, 2);
+}
+
+.menus-acoes:pressed {
+    -fx-graphic-text-gap: 12;
+}
+
+.menu-blue {
+    -fx-background-color: linear-gradient(to top right, #55c8fe, #34bdfe);
+    -fx-border-color: linear-gradient(to top right, #55c8fe, #34bdfe);
+}
+
+.menu-blue:pressed {
+    -fx-background-color: #55c8fe;
+    -fx-border-color: #34bdfe;
+}
+
+.menu-red {
+    -fx-background-color: linear-gradient(to top right, #ff5b5b, #ff5359);
+    -fx-border-color: linear-gradient(to top right, #ff5b5b, #ff5359);
+}
+
+.menu-red:pressed {
+    -fx-background-color: #ff5b5b;
+    -fx-border-color: #ff5b5b;
+}
+
+.menu-green {
+    -fx-background-color: linear-gradient(to top right, #7ecb8a, #73cb80);
+    -fx-border-color: linear-gradient(to top right, #7ecb8a, #73cb80);
+}
+
+.menu-green:pressed {
+    -fx-background-color: #7ecb8a;
+    -fx-border-color: #73cb80;
+}
+
+.menu-laranja {
+    -fx-background-color: linear-gradient(to top right, #ffc234, #fdb440);
+    -fx-border-color: linear-gradient(to top right, #ffc234, #fdb440);
+}
+
+.menu-laranja:pressed {
+    -fx-background-color: #ffc234;
+    -fx-border-color: #fdb440;
+}
+
+.menu-roxo {
+    -fx-background-color: linear-gradient(to top right, #79589F, #534A93);
+    -fx-border-color: linear-gradient(to top right, #79589F, #534A93);
+}
+
+.menu-roxo:pressed {
+    -fx-background-color: #79589F;
+    -fx-border-color: #79589F;
+}
+
+.menu-verdemenu {
+    -fx-background-color: linear-gradient(to top right, #cde073, #c2d66b);
+    -fx-border-color: linear-gradient(to top right, #cde073, #c2d66b);
+}
+
+.menu-verdemenu:pressed {
+    -fx-background-color: #cde073;
+    -fx-border-color: #cde073;
+}
+
+.acao-info {
+    -fx-graphic: url("../img/icon/info.png");
+}
+
+.acao-salvar {
+    -fx-graphic: url("../view/imgs/salvar.png");
+}
+
+.acao-editar {
+    -fx-graphic: url("../img/icon/atualizar.png");
+}
+
+.acao-excluir {
+    -fx-graphic: url("../view/imgs/excluir.png");
+}
+
+.acao-relatorio {
+    -fx-graphic: url("../img/icon/relatorio.png");
+}
+
+.acao-cancelar {
+    -fx-graphic: url("../img/icon/excluir.png");
+}
+
+.acao-buscar {
+    -fx-graphic: url("../view/imgs/pesquisar-b.png");
+}
+
+.acao-addproduto {
+    -fx-graphic: url("../view/imgs/plus_23px.png");
+}
+
+.acao-removerproduto {
+    -fx-graphic: url("../view/imgs/minus_23px.png");
+}
+
+.acao-selecionarclienteVF {
+    -fx-graphic: url("../view/imgs/rightarrow_23px.png");
+}

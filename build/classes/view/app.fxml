@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="anchormain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="642.0" prefWidth="1167.0" stylesheets="@../css/app.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.appMainController">
+   <children>
+      <AnchorPane fx:id="anchorPaneLogin" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #0aad05;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="799.0" fitWidth="1352.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imgs/imgLogin.png" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="128.0" layoutY="449.0" prefHeight="76.0" prefWidth="203.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 5,4,3,5;">
+               <children>
+                  <TextField fx:id="txtLOGIN" layoutX="45.0" layoutY="58.0" promptText="usuário" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="8.0" />
+                  <PasswordField fx:id="txtSenhaLogin" layoutX="45.0" layoutY="99.0" promptText="senha" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="8.0" />
+                  <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="15.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="13.0">
+                     <image>
+                        <Image url="@imgs/User_96px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="45.0" layoutX="4.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="13.0">
+                     <image>
+                        <Image url="@imgs/Password_96px.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="-1.0" layoutY="114.0" prefWidth="200.0" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="2.0" />
+               </children>
+            </AnchorPane>
+            <JFXButton fx:id="btEntrar" layoutX="128.0" layoutY="538.0" onAction="#handlebuttonEntrarLogin" prefHeight="42.0" prefWidth="149.0" ripplerFill="#0026ff" style="-fx-background-radius: 5,4,3,5; -fx-background-color: #1ED760;" styleClass="btlogin" stylesheets="@../css/app.css" text="entrar" textFill="WHITE">
+               <font>
+                  <Font name="Stone Walls" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btSair" layoutX="286.0" layoutY="538.0" onAction="#handlebuttonFecharLogin" prefHeight="42.0" prefWidth="47.0" ripplerFill="#0026ff" style="-fx-background-radius: 5,4,3,5; -fx-background-color: #DE5145;" styleClass="btlogin" stylesheets="@../css/app.css" text="X" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Stone Walls" size="19.0" />
+               </font>
+            </JFXButton>
+            <Label layoutX="116.0" layoutY="169.0" text="Pata" textFill="#21b017bf">
+               <font>
+                  <Font name="Unispace-Bold" size="82.0" />
+               </font>
+            </Label>
+            <Label layoutX="91.0" layoutY="260.0" text="Amiga" textFill="#21b017bf">
+               <font>
+                  <Font name="Unispace-Bold" size="82.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <BorderPane fx:id="borderPaneConteúdo" prefHeight="642.0" prefWidth="971.0" style="-fx-background-color: #F1F1F1;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane style="-fx-background-color: #2F2F2F;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="69.0" prefWidth="224.0" stylesheets="@../css/app.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="lbInício" alignment="CENTER" onMouseClicked="#handleMenuInício" opacity="0.89" prefHeight="79.0" prefWidth="223.0" stylesheets="@../css/app.css" text="Início" textFill="WHITE">
+                           <font>
+                              <Font name="Open Sans" size="27.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="labelbox" />
+                              <String fx:value="img" />
+                           </styleClass>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <ScrollPane layoutX="-1.0" layoutY="72.0" prefWidth="225.0" styleClass="scroll" stylesheets="@../css/app.css" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="72.0">
+                     <content>
+                        <VBox prefHeight="733.0" prefWidth="221.0" spacing="1.0" style="-fx-background-color: #2F2F2F;">
+                           <children>
+                              <VBox prefHeight="733.0" prefWidth="221.0" style="-fx-background-color: #2F2F2F;" styleClass="box-menus" stylesheets="@../css/app.css">
+                                 <children>
+                                    <ToggleButton fx:id="btProtetores" alignment="CENTER_LEFT" minHeight="0.0" mnemonicParsing="false" onAction="#handleMenuFormulárioProtetores" prefHeight="0.0" prefWidth="221.0" stylesheets="@../css/app.css" text="Protetores">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="grupoMenus" />
+                                       </toggleGroup>
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-cliente" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btAnimais" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#handleMenuFormulárioAnimais" prefHeight="25.0" prefWidth="224.0" stylesheets="@../css/app.css" text="Animais" toggleGroup="$grupoMenus">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-funcionarios" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                    <ToggleButton fx:id="btAdotantes" alignment="CENTER_LEFT" minHeight="0.0" mnemonicParsing="false" onAction="#handleMenuFormulárioAdotantes" prefHeight="0.0" prefWidth="221.0" stylesheets="@../css/app.css" text="Adotantes" toggleGroup="$grupoMenus">
+                                       <styleClass>
+                                          <String fx:value="menus" />
+                                          <String fx:value="menu-produtos" />
+                                       </styleClass>
+                                    </ToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+                  <AnchorPane prefHeight="26.0" prefWidth="223.0" styleClass="box-user" stylesheets="@../css/app.css" AnchorPane.bottomAnchor="1.0">
+                     <children>
+                        <Label fx:id="lbUser" layoutY="5.0" prefHeight="26.0" prefWidth="144.0" styleClass="lb-user" stylesheets="@../css/app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="lbLogOut" layoutX="141.0" layoutY="5.0" onMouseClicked="#menuLogOut" styleClass="menu-sair" stylesheets="@../css/app.css" text="Log out" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <ImageView fitHeight="10.0" fitWidth="224.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@imgs/lbTraçosLogo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="26.0" prefWidth="746.0" styleClass="box-footer" stylesheets="@../css/app.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <Label fx:id="lbVersãoDoSistema" layoutX="7.0" layoutY="-3.0" prefHeight="26.0" prefWidth="392.0" styleClass="box-mensagens" stylesheets="@../css/app.css" text="Versão do sistema : 0.1" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Hyperlink fx:id="hyperLink" layoutX="625.0" layoutY="4.0" onAction="#facebookCriador" prefHeight="24.0" prefWidth="78.0" styleClass="link" text="Facebook" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="boxCounteúdo" prefHeight="615.0" prefWidth="942.0" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fx:id="imgLogoPataAmiga" fitHeight="374.0" fitWidth="366.0" layoutX="288.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@imgs/imagemInicioLogo.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane fx:id="anchorPaneProtetores" minHeight="0.0" minWidth="0.0" prefHeight="609.0" prefWidth="942.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <AnchorPane fx:id="anchorPaneInicioProtetores" prefHeight="616.0" prefWidth="942.0">
+                                 <children>
+                                    <TableView fx:id="tbProtetores" accessibleRole="IMAGE_VIEW" prefHeight="387.0" prefWidth="942.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+                                       <columns>
+                                          <TableColumn fx:id="TableColumnIdProtetores" prefWidth="66.0" text="Id" />
+                                          <TableColumn fx:id="TableColumnNomeProtetores" prefWidth="230.0" text="Nome" />
+                                          <TableColumn fx:id="TableColumnEstadoProtetores" prefWidth="85.0" text="Estado" />
+                                          <TableColumn fx:id="TableColumnCelularProtetores" prefWidth="110.0" text="Celular" />
+                                          <TableColumn fx:id="TableColumnEmailProtetores" prefWidth="190.0" text="Email" />
+                                          <TableColumn fx:id="TableColumnEnderecoProtetores" prefWidth="270.0" text="Endereço" />
+                                          <TableColumn fx:id="TableColumnBairroProtetores" minWidth="0.0" prefWidth="270.0" text="Bairro" />
+                                          <TableColumn fx:id="TableColumnTipoProtetores" prefWidth="85.0" text="Tipo" />
+                                          <TableColumn fx:id="TableColumnCpfProtetores" prefWidth="100.0" text="CPF" />
+                                          <TableColumn fx:id="TableColumnSenhaProtetores" prefWidth="85.0" text="Senha" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Label fx:id="lbTituloProtetores" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Protetores" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="txtPesquisarProtetores" onKeyPressed="#eventKeyPressedEnterProtetores" prefHeight="50.0" prefWidth="417.0" promptText="Pesquisar" styleClass="pesquisar" />
+                                          <ToggleButton fx:id="btRelatorioProtetores" disable="true" mnemonicParsing="false" onAction="#handleButtonRelatorioProtetores" text="">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu2" />
+                                             </toggleGroup>
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-relatorio" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btNovoProtetores" mnemonicParsing="false" onAction="#handleButtonInserirProtetores" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-add" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btAlterarProtetores" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handlebuttonAlterarProtetores" text="" toggleGroup="$menu">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-editar" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btExcluirProtetores" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handlebuttonExcluirProtetores" text="" toggleGroup="$menu">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-excluir" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                              <AnchorPane fx:id="anchorPaneNovoProtetor" prefHeight="491.0" prefWidth="697.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                                 <children>
+                                    <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo">
+                                       <children>
+                                          <Label fx:id="lbTituloNovoProtetores" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Novo protetor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <GridPane hgap="10.0" layoutX="16.0" layoutY="60.0" prefHeight="197.0" prefWidth="870.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="26.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="0.0" prefWidth="74.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="562.0" minWidth="2.0" prefWidth="345.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="693.0" minWidth="10.0" prefWidth="163.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="155.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.0" minHeight="4.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="104.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="87.0" minHeight="7.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="87.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="37.0" styleClass="lb-info" text="Id :" />
+                                          <TextField fx:id="txtIdProtetores" disable="true" styleClass="campo" GridPane.rowIndex="1" />
+                                          <Label styleClass="lb-info" text="Nome :" GridPane.columnIndex="1" />
+                                          <Label styleClass="lb-info" text="CPF :" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Celular :" GridPane.columnIndex="3" />
+                                          <Label styleClass="lb-info" text="Email :" GridPane.columnIndex="4" />
+                                          <TextField fx:id="txtNomeProtetores" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="comboBoxEstadoProtetores" prefHeight="35.0" prefWidth="150.0" promptText="Selecione" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtCelularProtetores" styleClass="campo" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtEmailProtetores" styleClass="campo" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <Label styleClass="lb-info" text="Endereço :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Bairro :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Estado :" GridPane.columnIndex="2" />
+                                          <TextField fx:id="txtEnderecoProtetores" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtBairroProtetores" styleClass="campo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="comboBoxTipoProtetores" prefHeight="35.0" prefWidth="150.0" promptText="Selecione" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtCPFProtetores" styleClass="campo" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <Label styleClass="lb-info" text="Tipo : " GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Senha : " GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                                          <PasswordField fx:id="txtPasswordProtetores" prefHeight="53.0" prefWidth="139.0" promptText="até 10 caracteres" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane layoutX="23.0" layoutY="521.0" prefHeight="42.0" prefWidth="896.0" styleClass="box-menus-subtela">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="17.0" text="ATENÇÃO : Todos os campos são obrigatórios." />
+                                          <Button fx:id="btSalvarProtetores" layoutX="691.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonSalvarProtetores" prefWidth="200.0" text="Salvar">
+                                             <styleClass>
+                                                <String fx:value="menus-acoes" />
+                                                <String fx:value="acao-salvar" />
+                                                <String fx:value="menu-green" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="btCancelarProtetores" layoutX="481.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleButtonCancelarProtetores" prefWidth="200.0" text="Cancelar">
+                                             <styleClass>
+                                                <String fx:value="menus-acoes" />
+                                                <String fx:value="acao-excluir" />
+                                                <String fx:value="menu-red" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane id="AnchorPane" fx:id="anchorPaneAnimais" prefHeight="616.0" prefWidth="942.0" visible="false">
+                           <children>
+                              <AnchorPane fx:id="anchorPaneInicioAnimais" layoutX="-2.0" prefHeight="616.0" prefWidth="942.0">
+                                 <children>
+                                    <TableView fx:id="tbAnimais" prefHeight="492.0" prefWidth="730.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+                                       <columns>
+                                          <TableColumn fx:id="TableColumnIdAnimais" prefWidth="61.0" text="Id" />
+                                          <TableColumn fx:id="TableColumnIdResponsávelAnimais" prefWidth="330.0" text="Responsável" />
+                                          <TableColumn fx:id="TableColumnIdNomeAnimais" prefWidth="250.0" text="Nome" />
+                                          <TableColumn fx:id="TableColumnIdEspécieAnimais" prefWidth="250.0" text="Espécie" />
+                                          <TableColumn fx:id="TableColumnIdRaçaAnimais" prefWidth="130.0" text="Raça" />
+                                          <TableColumn fx:id="TableColumnIdGêneroAnimais" prefWidth="130.0" text="Gênero" />
+                                          <TableColumn fx:id="TableColumnIdadeAnimais" prefWidth="100.0" text="Idade" />
+                                          <TableColumn fx:id="TableColumnIdObservaçõesAnimais" prefWidth="100.0" text="Observações" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Label fx:id="lbTitulo" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Animais" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="txtPesquisarAnimais" onKeyPressed="#eventKeyPressedEnterAnimais" prefHeight="50.0" prefWidth="417.0" promptText="Pesquisar" styleClass="pesquisar" />
+                                          <ToggleButton fx:id="btRelatorioAnimais" disable="true" mnemonicParsing="false" onAction="#handleButtonRelatorioAnimais" text="">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu21" />
+                                             </toggleGroup>
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-relatorio" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btNovoAnimais" mnemonicParsing="false" onAction="#handleButtonInserirAnimais" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-add" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu2" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btAlterarAnimais" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleButtonAlterarAnimais" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-editar" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu23" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btExcluirAnimais" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handleButtonExcluirAnimais" text="" toggleGroup="$menu23">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-excluir" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                              <AnchorPane fx:id="anchorPaneNovoAnimais" prefHeight="616.0" prefWidth="942.0" visible="false">
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                                 <children>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="433.0" prefWidth="942.0" styleClass="..\css\default.css">
+                                       <children>
+                                          <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo">
+                                             <children>
+                                                <Label fx:id="lbTitulo1" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Novo animal" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <AnchorPane layoutX="12.0" layoutY="518.0" prefHeight="42.0" prefWidth="896.0" styleClass="box-menus-subtela">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="17.0" text="ATENÇÃO : Todos os campos são obrigatórios." />
+                                                <Button fx:id="btSalvarNovoAnimais" layoutX="691.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonSalvarAnimais" prefWidth="200.0" text="Salvar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-salvar" />
+                                                      <String fx:value="menu-green" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="btCancelarNovoAnimais" layoutX="481.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleButtonCancelarAnimais" prefWidth="200.0" text="Cancelar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-excluir" />
+                                                      <String fx:value="menu-red" />
+                                                   </styleClass>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <TextField fx:id="txtIdAnimais" disable="true" layoutX="41.0" layoutY="85.0" prefWidth="70.0" styleClass="campo" text="0" />
+                                          <TextField fx:id="txtNomeAnimais" layoutX="123.0" layoutY="85.0" prefWidth="424.0" styleClass="campo" />
+                                          <ComboBox fx:id="comboBoxResponsávelAnimais" layoutX="602.0" layoutY="85.0" prefHeight="35.0" prefWidth="332.0" />
+                                          <ComboBox fx:id="comboBoxRaçaAnimais" layoutX="123.0" layoutY="167.0" prefHeight="35.0" prefWidth="424.0" />
+                                          <ComboBox fx:id="comboBoxGêneroAnimais" layoutX="602.0" layoutY="167.0" prefHeight="35.0" prefWidth="124.0" />
+                                          <TextField fx:id="txtIdadeAnimais" layoutX="123.0" layoutY="256.0" prefWidth="91.0" styleClass="campo" />
+                                          <TextField fx:id="txtObservaçõesAnimais" layoutX="238.0" layoutY="256.0" prefWidth="309.0" styleClass="campo" />
+                                          <Label layoutX="41.0" layoutY="60.0" prefHeight="17.0" prefWidth="37.0" styleClass="lb-info" text="Id :" />
+                                          <Label layoutX="123.0" layoutY="60.0" styleClass="lb-info" text="Nome :" />
+                                          <Label layoutX="603.0" layoutY="139.0" styleClass="lb-info" text="Gênero : " />
+                                          <Label layoutX="123.0" layoutY="130.0" styleClass="lb-info" text="Raça : " />
+                                          <ToggleButton fx:id="btNovaRaça" layoutX="63.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleButtonInserirNovaRaçaAnimais" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-add" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu1" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btNovaEspécieAnimais" layoutX="753.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleButtonInserirNovaEspécieAnimais" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-add" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu11" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <Label layoutX="121.0" layoutY="225.0" text="Idade : " />
+                                          <Label layoutX="609.0" layoutY="60.0" text="Responsável : " />
+                                          <Label layoutX="238.0" layoutY="225.0" text="Observações : " />
+                                          <ComboBox fx:id="comboBoxEspécieAnimais" layoutX="810.0" layoutY="167.0" prefHeight="35.0" prefWidth="124.0" />
+                                          <Label layoutX="811.0" layoutY="139.0" styleClass="lb-info" text="Espécie : " />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="anchorPaneNovaRaçaAnimais" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <TableView fx:id="tbRaçaAnimais" prefHeight="255.0" prefWidth="871.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="colunaIdRaçaAnimais" prefWidth="90.0" text="Id" />
+                                          <TableColumn fx:id="colunaNomeRaçaAnimais" prefWidth="854.0" text="Nome" />
+                                       </columns>
+                                    </TableView>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="942.0">
+                                       <children>
+                                          <AnchorPane layoutX="17.0" layoutY="293.0" prefHeight="42.0" prefWidth="896.0" styleClass="box-menus-subtela">
+                                             <children>
+                                                <Button fx:id="btSalvarRaçaAnimais" layoutX="453.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonSalvarRaçaAnimais" prefWidth="200.0" text="Salvar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-salvar" />
+                                                      <String fx:value="menu-green" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="btCancelarRaçaAnimais" layoutX="243.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleButtonCancelarRaçaAnimais" prefWidth="200.0" text="Cancelar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-excluir" />
+                                                      <String fx:value="menu-red" />
+                                                   </styleClass>
+                                                </Button>
+                                                <TextField fx:id="txtPesquisarRaçaAnimais" layoutX="708.0" layoutY="8.0" onKeyPressed="#eventKeyPressedEnterRaçaAnimais" prefHeight="50.0" prefWidth="417.0" promptText="Pesquisar" styleClass="pesquisar" />
+                                                <ToggleButton fx:id="btExcluirRaçaAnimais" disable="true" layoutX="174.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonExcluirRaçaAnimais" text="" AnchorPane.bottomAnchor="7.0">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="menu12" />
+                                                   </toggleGroup>
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-excluir" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="btRelatorioRaçaAnimais" disable="true" layoutX="100.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonRelatorioRaçaAnimais" text="" AnchorPane.bottomAnchor="7.0">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="menu211" />
+                                                   </toggleGroup>
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-relatorio" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="btAlterarRaçaAnimais" disable="true" layoutX="137.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlebuttonAlterarRaçaAnimais" text="" toggleGroup="$menu23" AnchorPane.bottomAnchor="7.0">
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-editar" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                             </children>
+                                          </AnchorPane>
+                                          <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo">
+                                             <children>
+                                                <Label fx:id="lbTituloRaça" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Raça" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="212.0" layoutY="60.0" prefHeight="17.0" prefWidth="37.0" styleClass="lb-info" text="Id :" />
+                                          <TextField fx:id="txtIdRaçaAnimais" disable="true" layoutX="212.0" layoutY="85.0" prefWidth="70.0" styleClass="campo" text="0" />
+                                          <Label layoutX="307.0" layoutY="60.0" styleClass="lb-info" text="Nome :" />
+                                          <TextField fx:id="txtNomeRaçaAnimais" layoutX="307.0" layoutY="85.0" prefWidth="424.0" styleClass="campo" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                              <AnchorPane fx:id="anchorPaneNovaEspécieAnimais" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <TableView fx:id="tbEspécieAnimais" prefHeight="255.0" prefWidth="871.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <columns>
+                                          <TableColumn fx:id="colunaIdEspécieAnimais" prefWidth="90.0" text="Id" />
+                                          <TableColumn fx:id="colunaNomeEspécieAnimais" prefWidth="845.0" text="Nome" />
+                                       </columns>
+                                    </TableView>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="361.0" prefWidth="942.0">
+                                       <children>
+                                          <AnchorPane layoutX="17.0" layoutY="293.0" prefHeight="42.0" prefWidth="896.0" styleClass="box-menus-subtela">
+                                             <children>
+                                                <Button fx:id="btSalvarEspécieAnimais" layoutX="453.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonSalvarEspécieAnimais" prefWidth="200.0" text="Salvar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-salvar" />
+                                                      <String fx:value="menu-green" />
+                                                   </styleClass>
+                                                </Button>
+                                                <Button fx:id="btCancelarFornecedorProd" layoutX="243.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleButtonCancelarEspécieAnimais" prefWidth="200.0" text="Cancelar">
+                                                   <styleClass>
+                                                      <String fx:value="menus-acoes" />
+                                                      <String fx:value="acao-excluir" />
+                                                      <String fx:value="menu-red" />
+                                                   </styleClass>
+                                                </Button>
+                                                <TextField fx:id="txtPesquisarEspécieAnimais" layoutX="708.0" layoutY="8.0" onKeyPressed="#eventKeyPressedEnterEspécieAnimais" prefHeight="50.0" prefWidth="417.0" promptText="Pesquisar" styleClass="pesquisar" />
+                                                <ToggleButton fx:id="btRelatorioEspécieAnimais" disable="true" layoutX="100.0" layoutY="6.0" mnemonicParsing="false" onAction="#handleButtonRelatorioEspécieAnimais" text="" AnchorPane.bottomAnchor="7.0">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="menu2111" />
+                                                   </toggleGroup>
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-relatorio" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="btAlterarEspécieAnimais" disable="true" layoutX="137.0" layoutY="6.0" mnemonicParsing="false" onAction="#handlebuttonAlterarEspécieAnimais" text="" AnchorPane.bottomAnchor="7.0">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="menu22" />
+                                                   </toggleGroup>
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-editar" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                                <ToggleButton fx:id="btExcluirEspécieAnimais" disable="true" layoutX="174.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonExcluirEspécieAnimais" text="" AnchorPane.bottomAnchor="7.0">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="menu121" />
+                                                   </toggleGroup>
+                                                   <styleClass>
+                                                      <String fx:value="menus-tela" />
+                                                      <String fx:value="menu-excluir" />
+                                                   </styleClass>
+                                                </ToggleButton>
+                                             </children>
+                                          </AnchorPane>
+                                          <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo">
+                                             <children>
+                                                <Label fx:id="lbEspécie" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Espécie" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label layoutX="213.0" layoutY="92.0" prefHeight="17.0" prefWidth="37.0" styleClass="lb-info" text="Id :" />
+                                          <TextField fx:id="txtIdEspécieAnimais" disable="true" layoutX="213.0" layoutY="117.0" prefWidth="70.0" styleClass="campo" text="0" />
+                                          <Label layoutX="308.0" layoutY="92.0" styleClass="lb-info" text="Nome :" />
+                                          <TextField fx:id="txtNomeEspécieAnimais" layoutX="308.0" layoutY="117.0" prefWidth="405.0" styleClass="campo" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="anchorPaneAdotantes" minHeight="0.0" minWidth="0.0" prefHeight="609.0" prefWidth="942.0" visible="false">
+                           <children>
+                              <AnchorPane fx:id="anchorPaneInicioAdotantes" prefHeight="616.0" prefWidth="942.0">
+                                 <children>
+                                    <TableView fx:id="tbAdotantes" accessibleRole="IMAGE_VIEW" prefHeight="387.0" prefWidth="942.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="116.0">
+                                       <columns>
+                                          <TableColumn fx:id="TableColumnIdAdotantes" prefWidth="66.0" text="Id" />
+                                          <TableColumn fx:id="TableColumnNomeAdotantes" prefWidth="230.0" text="Nome" />
+                                          <TableColumn fx:id="TableColumnAnimalAdotantes" prefWidth="230.0" text="Animal" />
+                                          <TableColumn fx:id="TableColumnCpfAdotantes" prefWidth="100.0" text="CPF" />
+                                          <TableColumn fx:id="TableColumnCelularAdotantes" prefWidth="110.0" text="Celular" />
+                                          <TableColumn fx:id="TableColumnEmailAdotantes" prefWidth="190.0" text="Email" />
+                                          <TableColumn fx:id="TableColumnEnderecoAdotantes" prefWidth="270.0" text="Endereço" />
+                                          <TableColumn fx:id="TableColumnBairroAdotantes" minWidth="0.0" prefWidth="270.0" text="Bairro" />
+                                          <TableColumn fx:id="TableColumnEstadoAdotantes" prefWidth="85.0" text="Estado" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="10.0">
+                                       <children>
+                                          <Label fx:id="lbTituloAdotantes" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Adotantes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="txtPesquisarAdotantes" onKeyPressed="#eventKeyPressedEnterAdotantes" prefHeight="50.0" prefWidth="417.0" promptText="Pesquisar" styleClass="pesquisar" />
+                                          <ToggleButton fx:id="btRelatorioAdotantes" disable="true" mnemonicParsing="false" onAction="#handleButtonRelatorioAdotantes" text="">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu24" />
+                                             </toggleGroup>
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-relatorio" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btNovoAdotantes" mnemonicParsing="false" onAction="#handleButtonInserirNovoAdotante" text="">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-add" />
+                                             </styleClass>
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="menu2" />
+                                             </toggleGroup>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btAlterarAdotantes" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handlebuttonAlterarAdotante" text="" toggleGroup="$menu2">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-editar" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                          <ToggleButton fx:id="btExcluirAdotantes" disable="true" layoutX="1150.0" layoutY="27.0" mnemonicParsing="false" onAction="#handlebuttonExcluirAdotante" text="" toggleGroup="$menu2">
+                                             <styleClass>
+                                                <String fx:value="menus-tela" />
+                                                <String fx:value="menu-excluir" />
+                                             </styleClass>
+                                          </ToggleButton>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                              </AnchorPane>
+                              <AnchorPane fx:id="anchorPaneNovoAdotantes" prefHeight="491.0" prefWidth="697.0" visible="false" AnchorPane.bottomAnchor="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <stylesheets>
+                                    <URL value="@../css/default.css" />
+                                    <URL value="@../css/custom.css" />
+                                 </stylesheets>
+                                 <children>
+                                    <HBox prefHeight="60.0" prefWidth="926.0" styleClass="box-topo">
+                                       <children>
+                                          <Label fx:id="lbTituloNovoAdotantes" alignment="BOTTOM_LEFT" layoutX="10.0" maxWidth="1.7976931348623157E308" styleClass="titulo" text="Novo adotante" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="445.0" AnchorPane.topAnchor="0.0" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <GridPane hgap="10.0" layoutX="16.0" layoutY="60.0" prefHeight="139.0" prefWidth="882.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="230.0" minWidth="0.0" prefWidth="74.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="562.0" minWidth="2.0" prefWidth="345.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="693.0" minWidth="10.0" prefWidth="163.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="155.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="23.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="63.0" minHeight="4.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="104.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                                          <RowConstraints maxHeight="87.0" minHeight="7.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                       </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="txtIdAdotantes" disable="true" styleClass="campo" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtNomeAdotantes" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                          <ComboBox fx:id="comboBoxAnimalAdotantes" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtCelularAdotantes" styleClass="campo" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtEmailAdotantes" styleClass="campo" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                                          <TextField fx:id="txtEnderecoAdotantes" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtBairroAdotantes" styleClass="campo" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                          <TextField fx:id="txtCPFAdotantes" styleClass="campo" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                                          <ComboBox fx:id="comboBoxEstadoAdotantes" prefHeight="35.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                                          <Label prefHeight="17.0" prefWidth="37.0" styleClass="lb-info" text="Id :" />
+                                          <Label styleClass="lb-info" text="Nome :" GridPane.columnIndex="1" />
+                                          <Label styleClass="lb-info" text="CPF :" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Celular :" GridPane.columnIndex="3" />
+                                          <Label styleClass="lb-info" text="Email :" GridPane.columnIndex="4" />
+                                          <Label styleClass="lb-info" text="Endereço :" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Bairro :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Estado :" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                                          <Label styleClass="lb-info" text="Animal : " underline="true" GridPane.columnIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                    <AnchorPane layoutX="23.0" layoutY="521.0" prefHeight="42.0" prefWidth="896.0" styleClass="box-menus-subtela">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="17.0" text="ATENÇÃO : Todos os campos são obrigatórios." />
+                                          <Button fx:id="btSalvarAdotantes" layoutX="691.0" layoutY="4.0" mnemonicParsing="false" onAction="#handleButtonSalvarAdotantes" prefWidth="200.0" text="Salvar">
+                                             <styleClass>
+                                                <String fx:value="menus-acoes" />
+                                                <String fx:value="acao-salvar" />
+                                                <String fx:value="menu-green" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="btCancelarAdotantes" layoutX="481.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleButtonCancelarAdotantes" prefWidth="200.0" text="Cancelar">
+                                             <styleClass>
+                                                <String fx:value="menus-acoes" />
+                                                <String fx:value="acao-excluir" />
+                                                <String fx:value="menu-red" />
+                                             </styleClass>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
